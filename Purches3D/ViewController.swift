@@ -43,11 +43,13 @@ extension ViewController:UITableViewDataSource, UITableViewDelegate{
 //        UIView.animate(withDuration: 2.0, animations: {
 //            cell.img.transform = cell.img.transform.rotated(by: CGFloat(Double.pi))
 //        })
-    let rotate = UIViewPropertyAnimator(duration: 5, curve: .linear, animations: {
-            cell.img.transform = cell.img.transform.rotated(by: CGFloat(Double.pi))
+    let rotate = UIViewPropertyAnimator(duration: 4, curve: .linear, animations: {
+        cell.img.transform = cell.img.transform.rotated(by: CGFloat(Double.pi))
 
         })
-        rotate.startAnimation()
+        
+        rotate.startAnimation(afterDelay: 2)
+      
         cell.selectionStyle = .none
         return cell
     }
