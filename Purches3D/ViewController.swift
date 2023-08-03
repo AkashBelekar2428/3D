@@ -37,6 +37,7 @@ extension ViewController:UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "TVC", for: indexPath) as! TVC
         cell.img.image = imgArray[indexPath.row]
         cell.backgroundColor = #colorLiteral(red: 0.9660720229, green: 0.9660720229, blue: 0.9660720229, alpha: 1)
+        cell.selectionStyle = .none
         cell.img.translatesAutoresizingMaskIntoConstraints = false
         cell.img.centerXAnchor.constraint(equalTo: tblView.centerXAnchor).isActive = true
         cell.img.centerYAnchor.constraint(equalTo: tblView.centerYAnchor).isActive = true
@@ -49,9 +50,8 @@ extension ViewController:UITableViewDataSource, UITableViewDelegate{
         })
         
         rotate.startAnimation(afterDelay: 2)
-      
-        cell.selectionStyle = .none
         return cell
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 600
